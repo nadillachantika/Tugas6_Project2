@@ -59,7 +59,7 @@ func (PaymentService) TripsHandler(ctx context.Context, req cm.MyTrips) (res cm.
 	port := cm.Config.Connection.Port
 	user := cm.Config.Connection.User
 	pass := cm.Config.Connection.Password
-	data := cm.Config.Connection.Password
+	data := cm.Config.Connection.Database
 
 	var mySQL = fmt.Sprintf("%v:%v@tcp(%v:%v)/%v", user, pass, host, port, data)
 	db, err = sql.Open("mysql", mySQL)
